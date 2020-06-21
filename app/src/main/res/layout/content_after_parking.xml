@@ -10,6 +10,9 @@
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:progressTint="@android:color/holo_orange_light"
+        android:progressBackgroundTint="@android:color/secondary_text_dark_nodisable"
+        android:rating="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +22,25 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:gravity="center"
+        android:textSize="18dp"
         android:text="Thank you! As a reward you earned 1 Social Currency Point, redeemable at our Select Local Business."
         app:layout_constraintBottom_toTopOf="@+id/ratingBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ratingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="18dp"
+        android:text="Please rate your experience today"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

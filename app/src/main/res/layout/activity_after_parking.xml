@@ -10,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_after_parking" />
@@ -22,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="1dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:backgroundTint="@color/design_default_color_primary"
+        app:srcCompat="@android:drawable/star_big_on" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
