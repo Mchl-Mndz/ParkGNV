@@ -99,11 +99,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
         addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
         addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+
         //kissimmee civic center
         addParkingSpot(28.293189, -81.404038, map);
 
         //Harbor Freight Gainesville
-        addParkingSpot(29.675870,-82.320500,map);
+        addParkingSpot(29.675889,-82.321435,map);
 
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
