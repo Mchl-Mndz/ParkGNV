@@ -20,15 +20,19 @@
 
     <Button
         android:id="@+id/parkedBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="117dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="54dp"
-        android:background="#359c5e"
-        android:padding="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="599dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginRight="146dp"
+        android:layout_marginBottom="84dp"
+        android:background="#74A4FA"
         android:text="I'm Parked"
-        android:textColor="#ffffff"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#04253E" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
