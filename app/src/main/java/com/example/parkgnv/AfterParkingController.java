@@ -7,6 +7,7 @@ public class AfterParkingController {
     public AfterParkingController(float userRating, int userCoins) {
         this.userRating = userRating;
         this.userCoins = userCoins;
+
     }
 
 }
