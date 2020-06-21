@@ -84,35 +84,58 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         parkedBtn.setVisibility(View.INVISIBLE);
         Random rand = new Random();
         map = _map;
-        
+
         getLocationPermission();
 
         updateLocationUI();
 
         getDeviceLocation();
 
-        addParkingSpot(28.190729, -81.428177, map);
+        //8 demo parking spots
+        addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+        addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+        addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+        addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+        addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+        addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+        addParkingSpot(28.190729 + (28.29 - 28.19) * rand.nextDouble() , -81.428177 + (-81.5 - -81.428) * rand.nextDouble(), map);
+        //kissimmee civic center
+        addParkingSpot(28.293189, -81.404038, map);
+
+        //Harbor Freight Gainesville
+        addParkingSpot(29.675870,-82.320500,map);
 
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                parkedBtn.setVisibility(View.VISIBLE);
-                parkedBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if(!isParked){
-                            isParked = true;
-                            parkedBtn.setText("I'm Leaving");
-                        } else {
-                            isParked = false;
-                            parkedBtn.setText("I'm Parked");
-                            parkedBtn.setVisibility(View.INVISIBLE);
-                            //TODO start AfterParking activity
-                            startActivity(intent);
-                        }
-                    }
-                });
+                Location locationB = new Location("Point B");
+                locationB.setLatitude(marker.getPosition().latitude);
+                locationB.setLongitude(marker.getPosition().longitude);
+
+                //makes parking button visible if location to parking button is less or equal to than 250,
+                // if another marker outside that range is clicked, the parking button becomes invisible
+                if(lastKnownLocation.distanceTo(locationB) <= 250f) {
+                    parkedBtn.setVisibility(View.VISIBLE);
+                    return true;
+                }
+                parkedBtn.setVisibility(View.INVISIBLE);
                 return false;
+            }
+        });
+
+        //handles click of parking button
+        parkedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!isParked){
+                    isParked = true;
+                    parkedBtn.setText("I'm Leaving");
+                } else {
+                    isParked = false;
+                    parkedBtn.setText("I'm Parked");
+                    parkedBtn.setVisibility(View.INVISIBLE);
+                    startActivity(intent);
+                }
             }
         });
 
